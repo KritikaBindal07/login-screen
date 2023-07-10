@@ -1,38 +1,343 @@
-.App {
-  text-align: center;
+body{
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
   display: flex;
+  flex-direction: row;
+  
+}
+.container1{
+  display: flex;
+  width: 50%;
+  background: url("../public/meeting_background_staffs_team_chart_icons_cartoon_sketch_6838619.webp");
+  height: 47em;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.font{
+  font-family: 'Roboto', sans-serif;
+
+  font-weight: 500;
+}
+
+
+.back{
+  display: flex;
+  height: fit-content;
+  margin-left: 15px;
+  margin-top: 15px;
+  background-color: rgb(37, 48, 48);
+  padding: 8px;
+  border-radius: 15px;
+  
+}
+.container2{
+  display: flex;
+  width: 50%;
   flex-direction: column;
   align-items: center;
+
+}
+
+.img{
+  display: flex;
+  width: 50%;
+  height: fit-content;
+  margin: auto;
+  margin-bottom: 3%;
+  margin-top: 6%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.text{
+  display: flex;
+  font-weight: 500;
+  justify-content: center;
+  
+}
+
+.input{
+  width: 76%;
+  padding: 1rem 5rem 1rem 0rem;
+  gap: 1rem;
+  border-radius: 24px;
+  border: 0px ;
+  border-bottom: 3px solid rgb(228, 162, 38);
+  background-color: rgb(235, 229, 229);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 40px;
+
+  & input{
+    border: 0;
+    outline: none;
+    background: transparent;
+  }
+  
+  
+}
+
+.input1{
+  width: max-content;
+  padding: 1rem 3rem;
+  gap: 1rem;
+  border-radius: 24px;
+  border: 0px ;
+  border-bottom: 3px solid rgb(228, 162, 38);
+  background-color: rgb(235, 229, 229);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+
+  
+  & input{
+    border: 0;
+    outline: none;
+    background: transparent;
+  }
+  
+  
+}
+
+.or{
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+  font-size: small;
+  font-weight: 600;
+}
+
+
+.pass{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6%;
+}
+
+
+.forgot{
+  
+  
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(104, 98, 98);
+}
+
+.btn-div{
+  display: flex;
+  justify-content: center;
+  margin-top:5% ;
+
+}
+
+.btn{
+  padding: 1rem 10rem 1rem 10rem; 
   color: white;
+  background-color: rgb(228, 162, 38);
+  border-radius: 22px;
+  border: 0;
+ 
+}
+.btn1{
+  padding: 1rem 8rem 1rem 8rem;
+  color: black;
+  background-color: rgb(235, 229, 229);
+  border-radius: 22px;
+  border: 0;
+
+}
+.mediaContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.google{
+  display: flex;
+
+}
+.linkedin{
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.linkedin-button{
+  padding: 8px;
+  border-radius: 3px;
+  border: 0;
+  color: white;
+  font-weight: 500;
+  background-color: rgb(44, 122, 168);
+
+}
+
+.button-google{
+
+  padding: 8px;
+  
+  border-radius:0 1px 0px 0px;
+  border: 0;
+  color: white;
+  font-weight: 500;
+  background-color: rgb(109, 109, 237);
+}
+
+.google{
+  background-color:white;
+  border: 2px solid rgb(109, 109, 237);
+  border-right: 0;
+  
+  padding-left: 4px;
+}
+
+@media screen and (max-width:600px){
+  body{
+    overflow-y:scroll;
+    overflow-x: hidden;
   }
-  to {
-    transform: rotate(360deg);
+  .container{
+    display: flex;
+    flex-direction: column;
+    
   }
+
+  .container1{
+    display: flex;
+    width: 100%;
+    background: url("../public/meeting_background_staffs_team_chart_icons_cartoon_sketch_6838619.webp");
+    height: 20em;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .container2{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+
+  .mediaContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .input{
+    width: 83%;
+    padding: 1rem 2rem 1em 1rem;
+    gap: 1rem;
+    border-radius: 24px;
+    border: 0px ;
+    border-bottom: 3px solid rgb(228, 162, 38);
+    background-color: rgb(235, 229, 229);
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 40px;
+    
+  
+    & input{
+      border: 0;
+      outline: none;
+      background: transparent;
+    }
+    
+    
+  }
+
+  .input1{
+    width: max-content;
+    padding: 1rem 1rem;
+    gap: 1.2rem;
+    /* padding: 15px;
+    padding-left: 45px; */
+    border-radius: 24px;
+    border: 0px ;
+    border-bottom: 3px solid rgb(228, 162, 38);
+    background-color: rgb(235, 229, 229);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    
+    
+    & input{
+      border: 0;
+      outline: none;
+      background: transparent;
+    }
+    
+  }
+
+  .font{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+  }
+  
+  
+  .back{
+    display: flex;
+    height: fit-content;
+    margin-left: 4px;
+    margin-top: 6px;
+    background-color: rgb(37, 45, 45);
+    padding: 6px;
+    border-radius: 15px;
+    
+  }
+
+  .btn{
+    padding: 1rem 8rem 1rem 8rem; 
+    color: white;
+    background-color: rgb(228, 162, 38);
+    border-radius: 22px;
+    border: 0;
+   
+  }
+  .btn1{
+    padding: 1rem 6rem 1rem 6rem;
+    color: black;
+    background-color: rgb(235, 229, 229);
+    border-radius: 22px;
+    border: 0;
+  
+  }
+
+  .mediaContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 2rem;
+  }
+  
+  .google{
+    background-color:white;
+    border: 2px solid rgb(109, 109, 237);
+    border-right: 0;
+    margin: auto;
+    margin-bottom: 1rem;
+    
+    padding-left: 1px;
+  }
+  .linkedin{
+    display: flex;
+    margin: auto;
+  }
+  
+  
+
 }
