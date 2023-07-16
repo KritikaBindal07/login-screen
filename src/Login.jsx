@@ -5,29 +5,7 @@ import axios from "axios";
 
 import {Routes, Route, useNavigate} from 'react-router-dom';
 
-// const Login = () => {
-//   const [email, setEmail] = useState("");
-//   const [pass, setPass] = useState("");
-//   const [arrEmail, setArrEmail] = useState([]);
-//   const[arrPass,setArrPass] = useState([])
-//   const Get = () => {
 
-//     console.log(email);
-//     console.log(pass);
-
-//     setArrEmail([email, ...arrEmail]);
-//     setArrPass([pass,...arrPass])
-//     console.log(arrEmail,arrPass);
-
-//     {
-//       arrEmail.map((i,key)=>{
-//         localStorage.setItem(key,i)
-
-//       })
-
-//     }
-
-//   };
 
 const Login = () => {
 
@@ -84,37 +62,7 @@ const Login = () => {
     })
   };
 
-  // const HandleOtp = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     const response1 = await axios.post(
-  //       "https://be-infollion.vercel.app/api/v1/users/generate-otp",
-  //       {
-  //         username: `${userInput.username}`,
-  //       }
-  //     );
-  //     const otp = response1.data.otp;
-  //     console.log(response1);
-  //     console.log(otp);
-
-  //     const verify = await axios.post(
-  //       "https://be-infollion.vercel.app/api/v1/users/verify-otp",
-  //       {
-  //         username: "roopesh@simplifii.com",
-  //         otp: `${otp}`,
-  //       }
-  //     );
-
-  //     const otp_token = verify.data.token;
-  //     localStorage.setItem("Otp_token", otp_token);
-  //     console.log(verify);
-  //     console.log(verify.data.message);
-  //     console.log(otp_token);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  
   console.log(records.username);
   console.log(records.password);
 

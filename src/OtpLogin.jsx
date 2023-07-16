@@ -39,22 +39,7 @@ const OtpLogin = () => {
     }
   };
 
-  //   const verify = await axios.post(
-  //     "https://be-infollion.vercel.app/api/v1/users/verify-otp",
-  //     {
-  //       username: "roopesh@simplifii.com",
-  //       otp: `${otp}`,
-  //     }
-  //   );
-
-  //   const otp_token = verify.data.token;
-  //   localStorage.setItem("Otp_token", otp_token);
-  //   console.log(verify);
-  //   console.log(verify.data.message);
-  //   console.log(otp_token);
-  // } catch (err) {
-  //   console.log(err);
-  // }
+  
 
   const Verify = async (e) => {
     e.preventDefault();
