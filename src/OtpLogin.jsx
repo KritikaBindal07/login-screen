@@ -1,45 +1,12 @@
 import React from "react";
-import "./App.css";
 import { useState } from "react";
+import "./App.css";
 import axios from "axios";
 
-import {Routes, Route, useNavigate} from 'react-router-dom';
-
-// const Login = () => {
-//   const [email, setEmail] = useState("");
-//   const [pass, setPass] = useState("");
-//   const [arrEmail, setArrEmail] = useState([]);
-//   const[arrPass,setArrPass] = useState([])
-//   const Get = () => {
-
-//     console.log(email);
-//     console.log(pass);
-
-//     setArrEmail([email, ...arrEmail]);
-//     setArrPass([pass,...arrPass])
-//     console.log(arrEmail,arrPass);
-
-//     {
-//       arrEmail.map((i,key)=>{
-//         localStorage.setItem(key,i)
-
-//       })
-
-//     }
-
-//   };
-
-const Login = () => {
-
-  const navigate = useNavigate();
-
-  const navigateToOtp = () => {
-    
-    navigate('/otp');
-  };
+const OtpLogin = () => {
   const [userInput, setUserInput] = useState({
     username: "",
-    password: "",
+    otp1: "",
   });
 
   const HandleInput = (e) => {
@@ -50,73 +17,76 @@ const Login = () => {
     console.log(userInput);
   };
 
-  const [records, setRecords] = useState([]);
-  const HandleSubmit = async (e, userInput) => {
+  const HandleOtp = async (e) => {
     e.preventDefault();
-    setRecords(userInput);
-    console.log(records);
 
     try {
-      const response = await axios.post(
-        "https://be-infollion.vercel.app/api/v1/users/login",
+      const response1 = await axios.post(
+        "https://be-infollion.vercel.app/api/v1/users/generate-otp",
         {
           username: `${userInput.username}`,
-          password: `${userInput.password}`,
+        }
+      );
+      const otp = response1.data.otp;
+      const message = response1.data.message
+      alert(message)
+      alert(`OTP IS ${otp}`)
+      console.log(response1);
+      console.log(otp);
+    } catch (err) {
+      console.log(err);
+      alert("some error occured")
+    }
+  };
+
+  //   const verify = await axios.post(
+  //     "https://be-infollion.vercel.app/api/v1/users/verify-otp",
+  //     {
+  //       username: "roopesh@simplifii.com",
+  //       otp: `${otp}`,
+  //     }
+  //   );
+
+  //   const otp_token = verify.data.token;
+  //   localStorage.setItem("Otp_token", otp_token);
+  //   console.log(verify);
+  //   console.log(verify.data.message);
+  //   console.log(otp_token);
+  // } catch (err) {
+  //   console.log(err);
+  // }
+
+  const Verify = async (e) => {
+    e.preventDefault();
+
+    try {
+      const verify = await axios.post(
+        "https://be-infollion.vercel.app/api/v1/users/verify-otp",
+        {
+          username:`${userInput.username}`,
+          otp: userInput.otp1
         }
       );
 
-      const message = response.data.message
-      await alert(message)
-
-      const token = response.data.token;
-      localStorage.setItem("token", token);
-      console.log(message);
-
-      console.log(token);
+      const otp_token = verify.data.token;
+      const message1 = verify.data.message
+      localStorage.setItem("Otp_token", otp_token);
+      console.log(verify);
+      console.log(verify.data.message);
+      console.log(otp_token);
+      alert(message1)
     } catch (err) {
       console.log(err);
-      alert("Some error occured")
+      alert("some error occured")
     }
 
     setUserInput({
       username: "",
-      password: "",
+      otp1: "",
     })
+
+
   };
-
-  // const HandleOtp = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     const response1 = await axios.post(
-  //       "https://be-infollion.vercel.app/api/v1/users/generate-otp",
-  //       {
-  //         username: `${userInput.username}`,
-  //       }
-  //     );
-  //     const otp = response1.data.otp;
-  //     console.log(response1);
-  //     console.log(otp);
-
-  //     const verify = await axios.post(
-  //       "https://be-infollion.vercel.app/api/v1/users/verify-otp",
-  //       {
-  //         username: "roopesh@simplifii.com",
-  //         otp: `${otp}`,
-  //       }
-  //     );
-
-  //     const otp_token = verify.data.token;
-  //     localStorage.setItem("Otp_token", otp_token);
-  //     console.log(verify);
-  //     console.log(verify.data.message);
-  //     console.log(otp_token);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-  console.log(records.username);
-  console.log(records.password);
 
   return (
     <div className="container">
@@ -149,36 +119,40 @@ const Login = () => {
             ></input>
           </div>
 
+          
+
+          <div className="btn-div">
+            <button
+              onClick={(e) => HandleOtp(e)}
+              type="button"
+              className="btn"
+            >
+              Get OTP
+            </button>
+          </div> <br/>
+
+          
+          <br/>
+
           <div className="input1">
             <i className="fa fa-lock align"></i>
 
             <input
               onChange={HandleInput}
               className="input-box"
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={userInput.password}
-              required
+              type="text"
+              name="otp1"
+              placeholder="Enter OTP"
+              value={userInput.otp1}
+              
             ></input>
 
             <span className="forgot">Forgot?</span>
           </div>
-          <div className="btn-div">
-            <button
-              type="button"
-              onClick={(e) => HandleSubmit(e, userInput)}
-              className="btn"
-            >
-              Log in
-            </button>
-          </div>
-
-          <div className="or">OR</div>
 
           <div className="btn-div">
-            <button type="" onClick={navigateToOtp} className="btn1">
-              Log in with OTP
+            <button onClick={(e) => Verify(e)} className="btn1 btn-color">
+                OTP Verification
             </button>
           </div>
 
@@ -212,4 +186,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default OtpLogin;
