@@ -3,7 +3,7 @@ import "./App.css";
 import { useState } from "react";
 import axios from "axios";
 
-import {Routes, Route, useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 
 
