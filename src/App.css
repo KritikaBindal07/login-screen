@@ -9,9 +9,12 @@ body{
 }
 .container1{
   display: flex;
+ 
+  
   width: 50%;
-  background: url("../public/meeting_background_staffs_team_chart_icons_cartoon_sketch_6838619.webp");
-  height: 47em;
+  background: url("./bg.png");
+  background-position: -3rem -13rem ;
+  height: 60rem;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -216,7 +219,8 @@ body{
   .container1{
     display: flex;
     width: 100%;
-    background: url("../public/meeting_background_staffs_team_chart_icons_cartoon_sketch_6838619.webp");
+    background: url("./bg.png");
+    background-position: 0rem -6rem ;
     height: 20em;
     background-size: cover;
     background-repeat: no-repeat;
